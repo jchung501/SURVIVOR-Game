@@ -28,3 +28,19 @@ h1 {
 p {
     font-size: 20px;
 }
+#lower-game-button-parent {
+    border: 5px solid black;
+    margin-top: 15px;
+}
+#lower-game-buttons {
+    border: 2px solid black;
+    margin: 5px auto;
+}
+.lower-game-button {
+    justify-content: center;
+    border-radius: 2px;
+    font-size: 18px;
+    display: inline-block;
+    background-color: beige;
+    border: 2px solid black;
+}
