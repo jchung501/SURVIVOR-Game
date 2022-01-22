@@ -1,9 +1,15 @@
 body {
     text-align: center;
 }
+@font-face {
+    font-family: AnotherDanger;
+    src: url(./another_danger/Another\ Danger\ Slanted\ -\ Demo.otf) format("opentype");
+    font-weight: bold;
+}
 h1 {
-    color: slategray;
-    font-size: 50px;
+    color: red;
+    font-size: 75px;
+    font-family: AnotherDanger;
 }
 #upper-game-button-parent {
     display: flex;

@@ -11,18 +11,25 @@ const survivor = {
     hunger: 30,
     hasHatchet: true,
     hasZippo: true,
-    woodCount: 0
+    woodCount: 10,
 }
 const rabbit = {
     health: 10,
     elusiveness: 5
 }
+// let itemsInBag = document.getElementById('myDropDown')
 
 //////////////////////////////////////////
 ///////// ALL FUNCTIONS //////////////////
 //////////////////////////////////////////
 
 // Button Click Function
+
+// const showHide = () => {
+//     click = document.getElementById('')
+//     click.style.display === "none" ? (click.style.display = "block") : click.style.display = "none"
+// }
+
 const buttonClick = (evt) => {
     if (evt.currentTarget.id === 'campfire') {
         campFire();
@@ -53,19 +60,32 @@ const campFire = () => {
     survivor.hasZippo === true && survivor.woodCount >= 1 ? (
     survivor.woodCount -= 1,
     survivor.health += 10,
+    updateInfo(),
     createDiv(`You built a campfire. Gaining 10 health and using one piece of wood.`)) : (createDiv('You don\'t have enough wood!'))
 }
 // create signal fire
 const signalFire = () => {
     document.getElementById('game-text-container').innerHTML = ''
-    survivor.hasZippo === true && survivor.woodCount >= 10 ? (survivor.woodCount -= 10, createDiv(`You have built a signal fire. A helicopter was able to see your signal. You are saved! You have survived and won!!!`)) : (createDiv(`You don't have enough wood!`))
+    survivor.hasZippo === true && survivor.woodCount >= 10 ? (survivor.woodCount -= 10, updateInfo(), createDiv(`You have built a signal fire. A helicopter was able to see your signal. You are saved! You have survived and won!!!`)) : (createDiv(`You don't have enough wood!`))
 }
-
 // cook
 const cook = () => {
-    document.getElementById('game-text-container').innerHTML = ''
-    survivor.hasZippo === true && survivor.woodCount >= 1 && survivor.rabbitMeat >= 1 ? (survivor.woodCount -= 1, survivor.rabbitMeat -= 1, createDiv(`You have cooked some rabbit meat. It has been added to your inventory. Each cooked rabbit meats adds 50% to your hunger level and 30 healthpoints.`)) : createDiv(`You don't have enough wood or rabbit meat to cook!`)
+    document.getElementById('game-text-container').innerHTML = '';
+    survivor.hasZippo === true && survivor.woodCount >= 1 && survivor.rabbitMeat >= 1 ? (survivor.woodCount -= 1, survivor.rabbitMeat -= 1, updateInfo(), createDiv(`You have cooked some rabbit meat. It has been added to your inventory. Each cooked rabbit meat adds 50 to your hunger level and 30 healthpoints.`)) : createDiv(`You don't have enough wood or rabbit meat to cook!`)
 }
+// eat
+const eat = () => {
+    document.getElementById('game-text-container').innerHTML = '';
+    survivor.cookedRabbitMeat >= 1 ? (survivor.hunger += 50, survivor.health = 30, survivor.cookedRabbitMeat -= 1, updateInfo(), createDiv(`You have eaten a cooked rabbit meat. Your hunger level is now at ${survivor.hunger} and your health at ${survivor.health}.`)) : createDiv(`You do not have any cooked rabbit meat to eat!`)
+}
+// updates info within DOM
+const updateInfo = () => {
+    document.getElementById('health-points').innerText = `${survivor.health}`;
+    document.getElementById('hunger-level').innerText = `${survivor.hunger}`;
+    document.getElementById('wood-count').innerText = `${survivor.woodCount}`;
+}
+// sleep
+
 
 
 //////////////////////////////////////////
