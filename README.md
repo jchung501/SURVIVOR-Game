@@ -1,0 +1,3 @@
+** Survivor: A Text-Based Story Game
+
+This is a text-based story game following the adventure of the only survivor of a plane crash. He is dazed and confused but able to gather a hatchet, zippo and two energy bars from the scraps after the crash. He must be able to survive throughout the days and nights by setting up camp, staying fed and gathering enough firewood to start a signal fire to be saved. 
