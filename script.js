@@ -37,6 +37,8 @@ const buttonClick = (evt) => {
         attack();
     } else if (evt.currentTarget.id === 'sleep' ) {
         sleep();
+    } else if (evt.currentTarget.id === 'reset') {
+        reset();
     }
 }
 // Creates a new div, add class game-text to the div, create p element, appends to game-text-container
@@ -92,7 +94,11 @@ const sleep = () => {
     survivor.woodCount -= 1;
     days += 1;
     updateInfo();
-    createDiv(`You sleep and rest until next morning.`)
+    createDiv(`You sleep and rest until next morning. You wake up hungry.`)
+}
+// Reset
+const reset = () => {
+    location.reload();
 }
 
 //////////////////////////////////////////
@@ -105,3 +111,4 @@ document.getElementById('cook').addEventListener('click', buttonClick)
 document.getElementById('eat').addEventListener('click', buttonClick)
 document.getElementById('attack').addEventListener('click', buttonClick)
 document.getElementById('sleep').addEventListener('click', buttonClick)
+document.getElementById('reset').addEventListener('click', buttonClick)
