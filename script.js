@@ -1,7 +1,20 @@
 // Alert Player
 alert(`Welcome to Survivor. This is a story game. You have just survived a plane crash and you must survive day and night until you have gathered enough wood to start a signal fire to be saved. Use your wood accordingly.`)
 
-// Survivor and rabbit attributes
+//////////////////////////////////////////
+///////// DOM EVENT LISTENERS ////////////
+//////////////////////////////////////////
+
+document.getElementById('campfire').addEventListener('click', buttonClick)
+document.getElementById('signal-fire').addEventListener('click', buttonClick)
+document.getElementById('cook').addEventListener('click', buttonClick)
+document.getElementById('eat').addEventListener('click', buttonClick)
+document.getElementById('attack').addEventListener('click', buttonClick)
+
+//////////////////////////////////////////
+/////////////// OBJECTS //////////////////
+//////////////////////////////////////////
+
 const survivor = {
     name: 'Kato',
     health: 60,
@@ -56,11 +69,10 @@ const campFire = () => {
 }
 // create signal fire
 const signalFire = () => {
-    if (survivor.hasZippo === true && survivor.woodCount >= 10) {
-        survivor.woodCount -= 10
-        createDiv(`You have built a signal fire. A helicopter was able to see your signal. You are saved! You have survived and won!!!`)
-    } else {
-        createDiv(`You don't have enough wood!`)
-    }
+    survivor.hasZippo === true && survivor.woodCount >= 10 ? (survivor.woodCount -= 10, createDiv(`You have built a signal fire. A helicopter was able to see your signal. You are saved! You have survived and won!!!`)) : createDiv(`You don't have enough wood!`)
 }
 
+// cook
+// const cook = () => {
+//     if (survivor.hasZippo === true && )
+// }
