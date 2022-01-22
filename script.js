@@ -17,7 +17,7 @@ const rabbit = {
     health: 10,
     elusiveness: 5
 }
-// let itemsInBag = document.getElementById('myDropDown')
+let days = 0;
 
 //////////////////////////////////////////
 ///////// ALL FUNCTIONS //////////////////
@@ -41,6 +41,8 @@ const buttonClick = (evt) => {
         eat();
     } else if (evt.currentTarget.id === 'attack') {
         attack();
+    } else if (evt.currentTarget.id === 'sleep' ) {
+        sleep();
     }
 }
 
@@ -83,9 +85,18 @@ const updateInfo = () => {
     document.getElementById('health-points').innerText = `${survivor.health}`;
     document.getElementById('hunger-level').innerText = `${survivor.hunger}`;
     document.getElementById('wood-count').innerText = `${survivor.woodCount}`;
+    document.getElementById('days-passed').innerText = `${days}`;
 }
 // sleep
-
+const sleep = () => {
+    document.getElementById('game-text-container').innerHTML = '';
+    survivor.health += 20;
+    survivor.hunger -= 20;
+    survivor.woodCount -= 1;
+    days += 1;
+    updateInfo();
+    createDiv(`You sleep and rest until next morning.`)
+}
 
 
 //////////////////////////////////////////
@@ -97,3 +108,4 @@ document.getElementById('signal-fire').addEventListener('click', buttonClick)
 document.getElementById('cook').addEventListener('click', buttonClick)
 document.getElementById('eat').addEventListener('click', buttonClick)
 document.getElementById('attack').addEventListener('click', buttonClick)
+document.getElementById('sleep').addEventListener('click', buttonClick)
