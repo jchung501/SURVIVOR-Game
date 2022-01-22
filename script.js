@@ -48,6 +48,8 @@ const buttonClick = (evt) => {
         sleep();
     } else if (evt.currentTarget.id === 'reset') {
         reset();
+    } else if (evt.currentTarget.id === 'chop-tree') {
+        chopTree();
     }
 }
 // Creates a new div, add class game-text to the div, create p element, appends to game-text-container
@@ -129,3 +131,4 @@ document.getElementById('eat').addEventListener('click', buttonClick)
 document.getElementById('attack').addEventListener('click', buttonClick)
 document.getElementById('sleep').addEventListener('click', buttonClick)
 document.getElementById('reset').addEventListener('click', buttonClick)
+document.getElementById('chop-tree').addEventListener('click', buttonClick)
