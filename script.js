@@ -49,6 +49,7 @@ const createDiv = (gameText) => {
 }
 // create campfire
 const campFire = () => {
+    document.getElementById('game-text-container').innerHTML = ''
     survivor.hasZippo === true && survivor.woodCount >= 1 ? (
     survivor.woodCount -= 1,
     survivor.health += 10,
@@ -56,11 +57,13 @@ const campFire = () => {
 }
 // create signal fire
 const signalFire = () => {
+    document.getElementById('game-text-container').innerHTML = ''
     survivor.hasZippo === true && survivor.woodCount >= 10 ? (survivor.woodCount -= 10, createDiv(`You have built a signal fire. A helicopter was able to see your signal. You are saved! You have survived and won!!!`)) : (createDiv(`You don't have enough wood!`))
 }
 
 // cook
 const cook = () => {
+    document.getElementById('game-text-container').innerHTML = ''
     survivor.hasZippo === true && survivor.woodCount >= 1 && survivor.rabbitMeat >= 1 ? (survivor.woodCount -= 1, survivor.rabbitMeat -= 1, createDiv(`You have cooked some rabbit meat. It has been added to your inventory. Each cooked rabbit meats adds 50% to your hunger level and 30 healthpoints.`)) : createDiv(`You don't have enough wood or rabbit meat to cook!`)
 }
 
