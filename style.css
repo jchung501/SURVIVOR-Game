@@ -26,16 +26,9 @@ h1 {
     background-color: beige;
     border: 2px solid black;
 }
-#game-text-container {
-    border: 5px solid black;
-    margin-top: 15px;
-}
-#game-text {
-    border: 2px solid black;
-    margin: 5px auto;
-}
 p {
     font-size: 20px;
+    color: whitesmoke;
 }
 #lower-game-button-parent {
     border: 5px solid black;
