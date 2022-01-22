@@ -1,5 +1,8 @@
 body {
     text-align: center;
+    background: url("https://www.wallpapertip.com/wmimgs/42-425460_709967-title-video-game-days-gone-wallpaper-days.png");
+    background-size: cover;
+
 }
 @font-face {
     font-family: AnotherDanger;
@@ -8,7 +11,7 @@ body {
 }
 h1 {
     color: red;
-    font-size: 75px;
+    font-size: 100px;
     font-family: AnotherDanger;
 }
 #upper-game-button-parent {
