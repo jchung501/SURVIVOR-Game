@@ -54,5 +54,13 @@ const campFire = () => {
         createDiv('You don\'t have enough wood!')
     }
 }
-
+// create signal fire
+const signalFire = () => {
+    if (survivor.hasZippo === true && survivor.woodCount >= 10) {
+        survivor.woodCount -= 10
+        createDiv(`You have built a signal fire. A helicopter was able to see your signal. You are saved! You have survived and won!!!`)
+    } else {
+        createDiv(`You don't have enough wood!`)
+    }
+}
 
