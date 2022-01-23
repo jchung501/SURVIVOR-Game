@@ -12,6 +12,7 @@ const survivor = {
     hasHatchet: true,
     hasZippo: true,
     woodCount: 0,
+    energyLevel: 3,
 }
 const rabbit = {
     health: 10,
@@ -97,6 +98,7 @@ const updateInfo = () => {
     document.getElementById('hunger-level').innerText = `${survivor.hunger}`;
     document.getElementById('wood-count').innerText = `${survivor.woodCount}`;
     document.getElementById('days-passed').innerText = `${days}`;
+    document.getElementById('energy-level').innerText = `${survivor.energyLevel}`;
 }
 // sleep
 const sleep = () => {
@@ -104,6 +106,7 @@ const sleep = () => {
     survivor.health >= 100 ? survivor.health = 100 : survivor.health += 20;
     survivor.hunger -= 20;
     survivor.woodCount -= 1;
+    survivor.energyLevel += 2;
     days += 1;
     updateInfo();
     createDiv(`You sleep and rest until next morning. You wake up hungry.`)
@@ -116,11 +119,20 @@ const reset = () => {
 const chopTree = () => {
     document.getElementById('game-text-container').innerHTML = '';
     let chance = Math.floor(Math.random() * (5 - 1) + 1)
-    chance > Math.floor(Math.random() * (4 - 1) + 1)
-    ? (survivor.woodCount += 1, updateInfo(), createDiv(`You were succesful in chopping the tree!`))
-    : createDiv(`You failed horribly at chopping down the tree.`)
+    if (survivor.energyLevel > 0) { // if energy level greater than 0
+        survivor.energyLevel -= 1; 
+        updateInfo();
+        if (chance > Math.floor(Math.random() * 4 - 1) + 1) {
+            survivor.woodCount += 1;
+            updateInfo();
+            createDiv(`You were succesful in chopping the tree!`)
+        } else {
+            createDiv(`You failed horribly at chopping down the tree.`)
+        }
+    } else if (survivor.energyLevel <=0) {
+    createDiv(`You don't have enough energy!`) 
+    }
 }
-
 //////////////////////////////////////////
 ///////// DOM EVENT LISTENERS ////////////
 //////////////////////////////////////////
