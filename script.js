@@ -104,7 +104,8 @@ const updateInfo = () => {
 const sleep = () => {
     document.getElementById('game-text-container').innerHTML = '';
     survivor.health >= 100 ? survivor.health = 100 : survivor.health += 20;
-    survivor.hunger -= 20;
+    survivor.hunger <= 0 ? createDiv(`You have died from hunger. Please reset the game.`)
+    : survivor.hunger -= 10;
     survivor.woodCount -= 1;
     survivor.energyLevel += 2;
     days += 1;
