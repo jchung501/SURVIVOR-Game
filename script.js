@@ -99,18 +99,30 @@ const updateInfo = () => {
     document.getElementById('wood-count').innerText = `${survivor.woodCount}`;
     document.getElementById('days-passed').innerText = `${days}`;
     document.getElementById('energy-level').innerText = `${survivor.energyLevel}`;
+    if (survivor.hunger <= 0) {
+        return alert(`You have died from hunger. Please reset the game.`);
+    }
 }
 // sleep
 const sleep = () => {
     document.getElementById('game-text-container').innerHTML = '';
-    survivor.health >= 100 ? survivor.health = 100 : survivor.health += 20;
-    survivor.hunger <= 0 ? createDiv(`You have died from hunger. Please reset the game.`)
-    : survivor.hunger -= 10;
-    survivor.woodCount -= 1;
-    survivor.energyLevel += 2;
-    days += 1;
-    updateInfo();
-    createDiv(`You sleep and rest until next morning. You wake up hungry.`)
+    if (survivor.woodCount <=0) {
+        updateInfo();
+        createDiv(`You don't have enough wood.`)
+    } else {
+        survivor.woodCount -= 1;
+        days += 1;
+        survivor.health >= 100 ? survivor.health = 100 : survivor.health += 20;
+        survivor.energyLevel += 2;
+        if (survivor.hunger <= 0) {
+            updateInfo();
+            alert(`You have died from hunger. Please reset the game.`)
+        } else {
+        survivor.hunger -= 10;
+        updateInfo();
+        createDiv(`You sleep and rest until next morning. You wake up hungry.`)
+        }
+    }
 }
 // reset
 const reset = () => {
@@ -134,6 +146,7 @@ const chopTree = () => {
     createDiv(`You don't have enough energy!`) 
     }
 }
+
 //////////////////////////////////////////
 ///////// DOM EVENT LISTENERS ////////////
 //////////////////////////////////////////
