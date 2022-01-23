@@ -1,8 +1,6 @@
 // Alert Player
 alert(`Welcome to Survivor. This is a story game. You have just survived a plane crash and you must survive day and night until you have gathered enough wood to start a signal fire to be saved. Use your wood accordingly.`)
 
-
-
 //////////////////////////////////////////
 /////////////// OBJECTS //////////////////
 //////////////////////////////////////////
@@ -66,7 +64,10 @@ const createDiv = (gameText) => {
 const campFire = () => {
     document.getElementById('game-text-container').innerHTML = ''
     survivor.hasZippo === true && survivor.woodCount >= 1 
-    ? (survivor.woodCount -= 1, survivor.health += 10, updateInfo(),
+    ? (survivor.woodCount -= 1, survivor.health >= 100 
+        ? (survivor.health = 100) 
+        : (survivor.health += 10),
+        updateInfo(),
     createDiv(`You built a campfire. Gaining 10 health and using one piece of wood.`))
     : (createDiv('You don\'t have enough wood!'))
 }
@@ -113,11 +114,11 @@ const reset = () => {
 }
 // chop tree
 const chopTree = () => {
+    document.getElementById('game-text-container').innerHTML = '';
     let chance = Math.floor(Math.random() * (5 - 1) + 1)
     chance > Math.floor(Math.random() * (4 - 1) + 1)
     ? (survivor.woodCount += 1, updateInfo(), createDiv(`You were succesful in chopping the tree!`))
     : createDiv(`You failed horribly at chopping down the tree.`)
-
 }
 
 //////////////////////////////////////////
