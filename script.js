@@ -16,7 +16,8 @@ const survivor = {
 }
 const rabbit = {
     health: 10,
-    elusiveness: 5
+    elusiveness: 5,
+    found: true,
 }
 let days = 0;
 
@@ -49,6 +50,8 @@ const buttonClick = (evt) => {
         reset();
     } else if (evt.currentTarget.id === 'chop-tree') {
         chopTree();
+    } else if (evt.currentTarget.id === 'attack') {
+        attack();
     }
 }
 // Creates a new div, add class game-text to the div, create p element, appends to game-text-container
@@ -99,6 +102,7 @@ const updateInfo = () => {
     document.getElementById('wood-count').innerText = `${survivor.woodCount}`;
     document.getElementById('days-passed').innerText = `${days}`;
     document.getElementById('energy-level').innerText = `${survivor.energyLevel}`;
+    document.getElementById('raw-meat').innerText = `${survivor.rabbitMeat}`;
     if (survivor.hunger <= 0) {
         return alert(`You have died from hunger. Please reset the game.`);
     }
@@ -146,6 +150,19 @@ const chopTree = () => {
     createDiv(`You don't have enough energy!`) 
     }
 }
+// attack
+const attack = () => { // attacks
+    if (rabbit.found === true) {
+        let chance = Math.floor(Math.random() * (3 - 2) + 2) // chance = random number 
+        if (chance > Math.floor(Math.random() * (2 - 1) + 1)) { // if chance > random number
+            survivor.rabbitMeat += 1; // add rabbitMeat to survivor object
+            updateInfo(); // update info
+            createDiv(`You succesfully killed the rabbit and got some meat!`)
+        } else {
+            createDiv(`You were unsuccesful and the rabbit got away.`)
+        }
+    }
+}
 
 //////////////////////////////////////////
 ///////// DOM EVENT LISTENERS ////////////
@@ -159,3 +176,4 @@ document.getElementById('attack').addEventListener('click', buttonClick)
 document.getElementById('sleep').addEventListener('click', buttonClick)
 document.getElementById('reset').addEventListener('click', buttonClick)
 document.getElementById('chop-tree').addEventListener('click', buttonClick)
+document.getElementById('attack').addEventListener('click', buttonClick)
