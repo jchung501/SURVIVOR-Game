@@ -13,6 +13,8 @@ const survivor = {
     hasZippo: true,
     woodCount: 0,
     energyLevel: 3,
+    rabbitMeat: 0,
+    cookedMeat: 0,
 }
 const rabbit = {
     health: 10,
@@ -85,14 +87,15 @@ const signalFire = () => {
 // cook
 const cook = () => {
     document.getElementById('game-text-container').innerHTML = '';
-    survivor.hasZippo === true && survivor.woodCount >= 1 && survivor.rabbitMeat >= 1 ? (survivor.woodCount -= 1, survivor.rabbitMeat -= 1, updateInfo(), createDiv(`You have cooked some rabbit meat. It has been added to your inventory. Each cooked rabbit meat adds 50 to your hunger level and 30 healthpoints.`)) 
+    survivor.hasZippo === true && survivor.woodCount >= 1 && survivor.rabbitMeat >= 1 
+    ? (survivor.woodCount -= 1, survivor.rabbitMeat -= 1, survivor.cookedMeat += 1, updateInfo(), createDiv(`You have cooked some rabbit meat. It has been added to your inventory. Each cooked rabbit meat adds 50 to your hunger level and 30 healthpoints.`)) 
     : createDiv(`You don't have enough wood or rabbit meat to cook!`)
 }
 // eat
 const eat = () => {
     document.getElementById('game-text-container').innerHTML = '';
-    survivor.cookedRabbitMeat >= 1 
-    ? (survivor.hunger += 50, survivor.health = 30, survivor.cookedRabbitMeat -= 1, updateInfo(), createDiv(`You have eaten a cooked rabbit meat. Your hunger level is now at ${survivor.hunger} and your health at ${survivor.health}.`)) 
+    survivor.cookedMeat >= 1 
+    ? (survivor.hunger += 50, survivor.health += 30, survivor.cookedMeat -= 1, survivor.energyLevel += 2, updateInfo(), createDiv(`You have eaten cooked rabbit meat. Your hunger level is now at ${survivor.hunger}, your health at ${survivor.health}, and you gained some energy!`)) 
     : createDiv(`You do not have any cooked rabbit meat to eat!`)
 }
 // updates info within DOM
@@ -103,6 +106,7 @@ const updateInfo = () => {
     document.getElementById('days-passed').innerText = `${days}`;
     document.getElementById('energy-level').innerText = `${survivor.energyLevel}`;
     document.getElementById('raw-meat').innerText = `${survivor.rabbitMeat}`;
+    document.getElementById('cooked-meat').innerText = `${survivor.cookedMeat}`
     if (survivor.hunger <= 0) {
         return alert(`You have died from hunger. Please reset the game.`);
     }
@@ -155,6 +159,7 @@ const attack = () => { // attacks
     if (rabbit.found === true) {
         let chance = Math.floor(Math.random() * (3 - 2) + 2) // chance = random number 
         if (chance > Math.floor(Math.random() * (2 - 1) + 1)) { // if chance > random number
+            document.getElementById('game-text-container').innerHTML = '';
             survivor.rabbitMeat += 1; // add rabbitMeat to survivor object
             updateInfo(); // update info
             createDiv(`You succesfully killed the rabbit and got some meat!`)
