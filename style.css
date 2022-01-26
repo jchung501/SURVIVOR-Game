@@ -6,7 +6,7 @@ body {
 }
 @font-face {
     font-family: AnotherDanger;
-    src: url(./another_danger/Another\ Danger\ Slanted\ -\ Demo.otf) format("opentype");
+    src: url(./fonts/another_danger/Another\ Danger\ Slanted\ -\ Demo.otf) format("opentype");
     font-weight: bold;
 }
 h1 {
