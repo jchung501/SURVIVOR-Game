@@ -19,7 +19,7 @@ const survivor = {
 const rabbit = {
     health: 10,
     elusiveness: 5,
-    found: true,
+    found: false,
 }
 let days = 0;
 
@@ -95,7 +95,7 @@ const cook = () => {
 const eat = () => {
     document.getElementById('game-text-container').innerHTML = '';
     survivor.cookedMeat >= 1 
-    ? (survivor.hunger += 50, survivor.health += 30, survivor.cookedMeat -= 1, survivor.energyLevel += 2, updateInfo(), createDiv(`You have eaten cooked rabbit meat. Your hunger level is now at ${survivor.hunger}, your health at ${survivor.health}, and you gained some energy!`)) 
+    ? (survivor.hunger += 50, survivor.health += 30, survivor.cookedMeat -= 1, survivor.energyLevel += 5, updateInfo(), createDiv(`You have eaten cooked rabbit meat. Your hunger level is now at ${survivor.hunger}, your health at ${survivor.health}, and you gained some energy!`)) 
     : createDiv(`You do not have any cooked rabbit meat to eat!`)
 }
 // updates info within DOM
@@ -166,6 +166,9 @@ const attack = () => { // attacks
         } else {
             createDiv(`You were unsuccesful and the rabbit got away.`)
         }
+    } else if (rabbit.found === false) {
+        document.getElementById('game-text-container').innerHTML = '';
+        createDiv(`There is nothing to attack!`)
     }
 }
 

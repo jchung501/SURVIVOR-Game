@@ -24,5 +24,5 @@ Starting a campfire costs 1 wood.
 Starting a signal fire requires 10 wood.
 Cooking costs 1 wood and requires raw meat.
 Sleeping costs 1 wood and increases your hunger by 10 but in return provides you with energy.
-Eating decreases your hunger by 20 and provides you with 5 energy.
+Eating decreases your hunger by 50, increases healthpoints by 30 and provides you with 5 energy.
 You can only attack if you come across a rabbit whilst chopping a tree. It's a random chance. Otherwise, the attack option is useless.

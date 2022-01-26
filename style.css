@@ -41,6 +41,82 @@ p {
     background-color: beige;
     border: 2px solid black;
 }
+
+/* GAME ICONS  */
+#icon-container {
+    display: inline-flex;
+}
+#campfire:hover {
+    opacity: 0.75;
+    width: 100px;
+    height: 100px;
+}
+#campfire {
+    width: 75px;
+    height: 75px;
+    /* display: inline-block; */
+}
+#chop-tree {
+    width: 75px; 
+    height: 75px;
+}
+#chop-tree:hover {
+    opacity: 0.75;
+    width: 100px;
+    height: 100px;
+}
 #attack {
-    background: url('https://img1.pnghut.com/t/1/21/12/p3SsZrEcGU/scabbard-samurai-katana-pickaxe-okatana.jpg') no-repeat;
+    width: 70px;
+    height: 60px;
+    margin-top: 10px;
+}
+#attack:hover {
+    opacity: 0.75;
+    width: 100px;
+    height: 100px;
+}
+#sleep {
+    width: 80px;
+    height: 75px;
+}
+#sleep:hover {
+    opacity: 0.75;
+    width: 100px;
+    height: 100px;
+}
+#signal-fire {
+    width: 75px;
+    height: 75px;
+}
+#signal-fire:hover {
+    opacity: 0.75;
+    height: 100px;
+    width: 100px;
+}
+#cook {
+    width: 75px;
+    height: 75px;
+}
+#cook:hover {
+    opacity: 0.75;
+    width: 100px;
+    height: 100px;
+}
+#eat {
+    width: 75px;
+    height: 75px;
+}
+#eat:hover {
+    opacity: 0.75;
+    width: 100px;
+    height: 100px;
+}
+#reset {
+    width: 75px;
+    height: 75px;
+}
+#reset:hover {
+    opacity: 0.75;
+    width: 100px;
+    height: 100px;
 }
