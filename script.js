@@ -12,14 +12,14 @@ const survivor = {
     hasHatchet: true,
     hasZippo: true,
     woodCount: 0,
-    energyLevel: 3,
+    energyLevel: 5,
     rabbitMeat: 0,
     cookedMeat: 0,
 }
 const rabbit = {
     health: 10,
     elusiveness: 5,
-    found: false,
+    found: true,
 }
 let days = 0;
 
@@ -32,7 +32,18 @@ let days = 0;
 const gameLoaded = () => {
     days += 1;
     updateInfo();
-    createDiv(`Will you be able to survive? Please select an action below.`)
+    createDiv(`
+    <i>**ENGINE FAILURE**</i>
+    <br><br>
+    The pilot comes over the intercom, "Our turbines are suffering a failure and we will do our best to land this as safely as possible. Please brace yourselves for impact and may God help us all.
+    <br><br>
+    The last thing Kato sees before he tucks his head down is that the plane is headed towards a deserted island. He tucks his head, closes his eyes and prays. 
+    <br><br>
+    The plane impacts the deserted island. Everything is black.
+    <br><br> 
+    Kato wakes up disoriented and looks around horrified... he is the only survivor.
+    <br><br>
+    <strong>Will he be able to survive?</bold> Please select an action below.`)
 }
 
 const buttonClick = (evt) => {
@@ -161,6 +172,7 @@ const attack = () => { // attacks
         if (chance > Math.floor(Math.random() * (2 - 1) + 1)) { // if chance > random number
             document.getElementById('game-text-container').innerHTML = '';
             survivor.rabbitMeat += 1; // add rabbitMeat to survivor object
+            rabbit.found = false; // after killing rabbit, turns value false so player can't attack anymore
             updateInfo(); // update info
             createDiv(`You succesfully killed the rabbit and got some meat!`)
         } else {
