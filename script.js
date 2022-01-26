@@ -19,7 +19,7 @@ const survivor = {
 const rabbit = {
     health: 10,
     elusiveness: 5,
-    found: true,
+    found: false,
 }
 let days = 0;
 
@@ -43,7 +43,9 @@ const gameLoaded = () => {
     <br><br> 
     Kato wakes up disoriented and looks around horrified... he is the only survivor.
     <br><br>
-    <strong>Will he be able to survive?</bold> Please select an action below.`)
+    <bold>Will he be able to survive?</bold> His life is in <strong>YOUR</strong> hands.
+    <br><br>
+    Please select an option below.`)
 }
 
 const buttonClick = (evt) => {

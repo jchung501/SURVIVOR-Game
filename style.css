@@ -33,14 +33,14 @@ p {
 /* #lower-game-button-parent { */
 /* #lower-game-buttons { */
 
-.lower-game-button {
+/* .lower-game-button { 
     justify-content: center;
     border-radius: 2px;
     font-size: 18px;
     display: inline-block;
     background-color: beige;
     border: 2px solid black;
-}
+} */
 
 /* GAME ICONS  */
 #icon-container {
@@ -48,92 +48,92 @@ p {
     justify-content: center;
 }
 #campfire:hover {
-    opacity: 0.75;
+    opacity: 1;
     width: 100px;
     height: 100px;
-    transform: rotate(360deg);
 }
 #campfire {
+    opacity: 0.50;
     width: 75px;
     height: 75px;
-    transition: all 0.5s ease-in-out
+    transition: all 0.25s ease-in-out
     /* display: inline-block; */
 }
 #chop-tree {
+    opacity: 0.50;
     width: 75px; 
     height: 75px;
-    transition: all 0.5s ease-in-out
+    transition: all 0.25s ease-in-out
 }
 #chop-tree:hover {
-    opacity: 0.75;
+    opacity: 1;
     width: 100px;
     height: 100px;
-    transform: rotate(360deg);
 }
 #attack {
+    opacity: 0.50;
     width: 70px;
     height: 60px;
     margin-top: 10px;
-    transition: all 0.5s ease-in-out
+    transition: all 0.25s ease-in-out
 }
 #attack:hover {
-    opacity: 0.75;
+    opacity: 1;
     width: 100px;
     height: 100px;
-    transform: rotate(360deg);
 }
 #sleep {
+    opacity: 0.50;
     width: 80px;
     height: 75px;
-    transition: all 0.5s ease-in-out
+    transition: all 0.25s ease-in-out
 }
 #sleep:hover {
-    opacity: 0.75;
+    opacity: 1;
     width: 100px;
     height: 100px;
-    transform: rotate(360deg);
 }
 #signal-fire {
+    opacity: 0.50;
     width: 75px;
     height: 75px;
-    transition: all 0.5s ease-in-out
+    transition: all 0.25s ease-in-out
 }
 #signal-fire:hover {
-    opacity: 0.75;
+    opacity: 1;
     height: 100px;
     width: 100px;
-    transform: rotate(360deg);
 }
 #cook {
+    opacity: 0.50;
     width: 75px;
     height: 75px;
-    transition: all 0.5s ease-in-out
+    transition: all 0.25s ease-in-out
 }
 #cook:hover {
-    opacity: 0.75;
+    opacity: 1;
     width: 100px;
     height: 100px;
-    transform: rotate(360deg);
 }
 #eat {
+    opacity: 0.50;
     width: 75px;
     height: 75px;
-    transition: all 0.5s ease-in-out
+    transition: all 0.25s ease-in-out
 }
 #eat:hover {
-    opacity: 0.75;
+    opacity: 1;
     width: 100px;
     height: 100px;
-    transform: rotate(360deg);
 }
 #reset {
+    opacity: 0.50;
     width: 75px;
     height: 75px;
-    transition: all 0.5s ease-in-out;
+    transition: all 0.25s ease-in-out;
 }
 #reset:hover {
-    opacity: 0.75;
+    opacity: 1;
     width: 100px;
     height: 100px;
-    transform: rotate(360deg);
 }
