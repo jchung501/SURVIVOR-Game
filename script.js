@@ -107,9 +107,45 @@ const cook = () => {
 // eat
 const eat = () => {
     document.getElementById('game-text-container').innerHTML = '';
-    survivor.cookedMeat >= 1 
-    ? (survivor.hunger += 50, survivor.health += 30, survivor.cookedMeat -= 1, survivor.energyLevel += 5, updateInfo(), createDiv(`You have eaten cooked rabbit meat. Your hunger level is now at ${survivor.hunger}, your health at ${survivor.health}, and you gained some energy!`)) 
-    : createDiv(`You do not have any cooked rabbit meat to eat!`)
+    if (survivor.cookedMeat >= 1) {
+        if (survivor.health >= 100) {
+            survivor.health = 100; 
+            survivor.cookedMeat -= 1;
+            survivor.energyLevel += 5; 
+            survivor.hunger += 50;
+            updateInfo(); 
+            createDiv(`You have eaten cooked rabbit meat. Your hunger level is now at ${survivor.hunger}, your health at ${survivor.health}, and you gained some energy!`)
+        } else if (survivor.health >= 80) {
+            survivor.health += 20;
+            survivor.cookedMeat -= 1;
+            survivor.energyLevel += 5; 
+            survivor.hunger += 50;
+            updateInfo(); 
+            createDiv(`You have eaten cooked rabbit meat. Your hunger level is now at ${survivor.hunger}, your health at ${survivor.health}, and you gained some energy!`)
+        } else if (survivor.health >= 90) {
+            survivor.health += 10;
+            survivor.cookedMeat -= 1;
+            survivor.energyLevel += 5; 
+            survivor.hunger += 50;
+            updateInfo(); 
+            createDiv(`You have eaten cooked rabbit meat. Your hunger level is now at ${survivor.hunger}, your health at ${survivor.health}, and you gained some energy!`)
+        } else if (survivor.health > 0 || survivor.health === 70) {
+            survivor.health += 30;
+            survivor.cookedMeat -= 1;
+            survivor.energyLevel += 5; 
+            survivor.hunger += 50;
+            updateInfo(); 
+            createDiv(`You have eaten cooked rabbit meat. Your hunger level is now at ${survivor.hunger}, your health at ${survivor.health}, and you gained some energy!`)
+        }
+        // survivor.health += 30;
+        // survivor.cookedMeat -= 1;
+        // survivor.energyLevel += 5; 
+        // survivor.hunger += 50;
+        // updateInfo(); 
+        // createDiv(`You have eaten cooked rabbit meat. Your hunger level is now at ${survivor.hunger}, your health at ${survivor.health}, and you gained some energy!`)
+    } else {
+        createDiv(`You do not have any cooked rabbit meat to eat!`)
+    } 
 }
 // updates info within DOM
 const updateInfo = () => {
