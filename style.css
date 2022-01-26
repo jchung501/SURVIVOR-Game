@@ -9,6 +9,11 @@ body {
     src: url(./fonts/another_danger/Another\ Danger\ Slanted\ -\ Demo.otf) format("opentype");
     font-weight: bold;
 }
+@font-face {
+    font-family: Nature;
+    src: url(./fonts/love_nature/Love\ Nature.otf) format("opentype");
+    font-weight: bold;
+}
 h1 {
     color: red;
     font-size: 100px;
@@ -27,8 +32,9 @@ h1 {
     border: 2px solid black;
 }
 p {
-    font-size: 20px;
+    font-size: 30px;
     color: whitesmoke;
+    font-family: Nature;
 }
 /* #lower-game-button-parent { */
 /* #lower-game-buttons { */
