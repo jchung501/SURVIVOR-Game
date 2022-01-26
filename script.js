@@ -134,7 +134,7 @@ const sleep = () => {
         survivor.woodCount -= 1;
         days += 1;
         survivor.health >= 100 ? survivor.health = 100 : survivor.health += 20;
-        survivor.energyLevel += 2;
+        survivor.energyLevel += 5;
         if (survivor.hunger <= 0) {
             updateInfo();
             alert(`You have died from hunger. Please reset the game.`)
@@ -151,11 +151,17 @@ const reset = () => {
 }
 // chop tree
 const chopTree = () => {
-    document.getElementById('game-text-container').innerHTML = '';
-    let chance = Math.floor(Math.random() * (5 - 1) + 1)
-    if (survivor.energyLevel > 0) { // if energy level greater than 0
-        survivor.energyLevel -= 1; 
-        updateInfo();
+    let foundRabbit = Math.floor(Math.random() * (3 - 1) + 1);
+    if (foundRabbit > Math.floor(Math.random() * (3 - 1) + 1) && survivor.energyLevel > 0) {
+        document.getElementById('game-text-container').innerHTML = '';
+        rabbit.found = true;
+        createDiv(`You have found a rabbit! Attack it for some meat!`);
+    } else {
+        document.getElementById('game-text-container').innerHTML = '';
+        let chance = Math.floor(Math.random() * (5 - 1) + 1)
+        if (survivor.energyLevel > 0) { // if energy level greater than 0
+            survivor.energyLevel -= 1; 
+            updateInfo();
         if (chance > Math.floor(Math.random() * 4 - 1) + 1) {
             survivor.woodCount += 1;
             updateInfo();
@@ -166,18 +172,20 @@ const chopTree = () => {
     } else if (survivor.energyLevel <=0) {
     createDiv(`You don't have enough energy!`) 
     }
+    }
 }
 // attack
 const attack = () => { // attacks
     if (rabbit.found === true) {
-        let chance = Math.floor(Math.random() * (3 - 2) + 2) // chance = random number 
-        if (chance > Math.floor(Math.random() * (2 - 1) + 1)) { // if chance > random number
+        let chance = Math.floor(Math.random() * (3 - 1) + 1) // chance = random number 
+        if (chance > Math.floor(Math.random() * (3 - 1) + 1)) { // if chance > random number
             document.getElementById('game-text-container').innerHTML = '';
             survivor.rabbitMeat += 1; // add rabbitMeat to survivor object
             rabbit.found = false; // after killing rabbit, turns value false so player can't attack anymore
             updateInfo(); // update info
             createDiv(`You succesfully killed the rabbit and got some meat!`)
         } else {
+            rabbit.found = false;
             createDiv(`You were unsuccesful and the rabbit got away.`)
         }
     } else if (rabbit.found === false) {
