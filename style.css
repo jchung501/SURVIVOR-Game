@@ -19,21 +19,23 @@ h1 {
     font-size: 100px;
     font-family: AnotherDanger;
 }
+
+/***************** UPPER GAME DIVS **********************/
 #upper-game-button-parent {
     display: flex;
     justify-content: center;
 }
 .game-button {
-    /* justify-content: center; */
     font-size: 18px;
     border: 2px white solid;
     color: cyan;
     padding: 20px 20px;
+    margin: 0 12px;
     font-weight: bold;
     font-family: 'Lucida', sans-serif, monospace;
     letter-spacing: 1px;
     box-shadow: inset 0 0 0 0 cyan;
-    transition: ease-out 0.4s;
+    transition: ease-out 0.5s;
 }
 .game-button:hover {
     box-shadow: inset 400px 0 0 0 cyan;
@@ -52,7 +54,7 @@ p {
     font-family: Nature;
 }
 
-/* GAME ICONS  */
+/* LOWER GAME ICONS  */
 #icon-container {
     display: flex;
     justify-content: center;
