@@ -12,43 +12,29 @@
     <body onload="gameLoaded()"></body>
     <h1>S U R V I V O R</h1>
     <div id='upper-game-button-parent'>
-        <div id='upper-game-button'>
-            <button type='button' class="game-button">Health:<span id='health-points'></span></button>
-            <button type='button' class="game-button">Hunger:<span id="hunger-level"></span></button>
-            <button type='button' class="game-button">Wood:<span id="wood-count"></span></button>
-            <button type='button' class="game-button">Day:<span id='days-passed'></span></button>
-            <button type='button' class="game-button">Cooked Meat:<span id='cooked-meat'> 0</span></button>
-            <button type='button' class="game-button">Raw Meat:<span id='raw-meat'> 0</span></button>
-            <button type='button' class='game-button'>Energy:<span id='energy-level'></span></button>
+            <div class="game-button" disabled>Health:<span id='health-points'></span></div>
+            <div class="game-button" disabled>Hunger:<span id="hunger-level"></span>%</div>
+            <div class="game-button" disabled>Wood:<span id="wood-count"></span></div>
+            <div class="game-button" disabled>Day:<span id='days-passed'></span></div>
+            <div class="game-button" disabled>Cooked Meat:<span id='cooked-meat'> 0</span></div>
+            <div class="game-button" disabled>Raw Meat:<span id='raw-meat'> 0</span></div>
+            <div class='game-button' disabled>Energy:<span id='energy-level'></span></div>
+    </div>
+        <div id='game-text-container'>
+            <div id='game-text'></div>
         </div>
     </div>
-    <div id='game-text-container'></div>
-    </div>
-    <div id='lower-game-button-parent'>
-        <div id='lower-game-buttons1'>
-            <!-- <button type="button" class="lower-game-button" id="campfire">Campfire</button> -->
-            <div id='icon-container'>
-                <img src='game_icons/campfire.png' id='campfire'>
-                <img src='game_icons/choptree.png' id='chop-tree'>
-                <img src='game_icons/attack.PNG' id ='attack'>
-                <img src='game_icons/sleep.PNG' id='sleep'>
-                <img src='game_icons/getsaved.png' id='signal-fire'>
-                <img src='game_icons/cook.png' id='cook'>
-                <img src='game_icons/eat.png' id='eat'>
-                <img src='game_icons/reset.png' id='reset'>
-            </div>
-            <!-- <button type="button" class="lower-game-button" id="signal-fire">Signal Fire</button> -->
-            <!-- <button type="button" class="lower-game-button" id="cook">Cook</button> -->
-            <!-- <button type="button" class="lower-game-button" id="eat">Eat</button> -->
-            <!-- <button type="button" class="lower-game-button" id="attack">Attack</button> -->
-            <!-- <button type="button" class="lower-game-button" id='sleep'>Sleep</button> -->
-            <!-- <button type="button" class="lower-game-button" id='chop-tree'>Chop Tree</button> -->
-            <!-- <button type='button' class="lower-game-button" id="reset">Reset</button> -->
+        <div id='icon-container'>
+            <img src='game_icons/campfire.png'  id='campfire' title="Start a campfire">
+            <img src='game_icons/choptree.png' id='chop-tree' title="Chop tree">
+            <img src='game_icons/attack.PNG' id ='attack' title="Attack">
+            <img src='game_icons/sleep.PNG' id='sleep' title="Go to sleep">
+            <img src='game_icons/getsaved.png' id='signal-fire' title="Start a signal fire">
+            <img src='game_icons/cook.png' id='cook' title="Cook">
+            <img src='game_icons/eat.png' id='eat' title="Eat">
+            <img src='game_icons/reset.png' id='reset' title="Reloads the game">
         </div>
-        <!-- <div> -->
-            <!-- <button type="button" class="lower-game-button" id='sleep'>Sleep</button> -->
-            <!-- <button type="button" class="lower-game-button" id='chop-tree'>Chop Tree</button> -->
-        <!-- </div> -->
+        </div>
     </div>
 </body>
 </html>

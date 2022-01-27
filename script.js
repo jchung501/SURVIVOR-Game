@@ -14,7 +14,7 @@ const survivor = {
     woodCount: 0,
     energyLevel: 5,
     rabbitMeat: 0,
-    cookedMeat: 5,
+    cookedMeat: 0,
 }
 const rabbit = {
     health: 10,
@@ -70,10 +70,10 @@ const buttonClick = (evt) => {
     }
 }
 // Creates a new div, add class game-text to the div, create p element, appends to game-text-container
-const gameTextDOM = document.querySelector('#game-text-container')
+const gameTextDOM = document.querySelector('#game-text')
 const createDiv = (gameText) => {
     let newDiv = document.createElement('div')
-    newDiv.classList.add('game-text')
+    // newDiv.classList.add('game-text')
     let newP = document.createElement('p')
     newP.innerHTML = `${gameText}`
     newDiv.append(newP)
@@ -81,7 +81,7 @@ const createDiv = (gameText) => {
 }
 // create campfire
 const campFire = () => {
-    document.getElementById('game-text-container').innerHTML = ''
+    document.getElementById('game-text').innerHTML = '';
     survivor.hasZippo === true && survivor.woodCount >= 1 
     ? (survivor.woodCount -= 1, survivor.health >= 100 
         ? (survivor.health = 100) 
@@ -92,21 +92,21 @@ const campFire = () => {
 }
 // create signal fire
 const signalFire = () => {
-    document.getElementById('game-text-container').innerHTML = ''
+    document.getElementById('game-text').innerHTML = ''
     survivor.hasZippo === true && survivor.woodCount >= 10 
     ? (survivor.woodCount -= 10, updateInfo(), createDiv(`You have built a signal fire. A helicopter was able to see your signal. You are saved! You have survived and won!!!`), alert(`You've won!! Kato was able to be saved by a helicopter!`)) 
     : (createDiv(`You don't have enough wood!`))
 }
 // cook
 const cook = () => {
-    document.getElementById('game-text-container').innerHTML = '';
+    document.getElementById('game-text').innerHTML = '';
     survivor.hasZippo === true && survivor.woodCount >= 1 && survivor.rabbitMeat >= 1 
     ? (survivor.woodCount -= 1, survivor.rabbitMeat -= 1, survivor.cookedMeat += 1, updateInfo(), createDiv(`You have cooked some rabbit meat. It has been added to your inventory. Each cooked rabbit meat adds 50 to your hunger level and 30 healthpoints.`)) 
     : createDiv(`You don't have enough wood or rabbit meat to cook!`)
 }
 // eat
 const eat = () => {
-    document.getElementById('game-text-container').innerHTML = '';
+    document.getElementById('game-text').innerHTML = '';
     if (survivor.cookedMeat >= 1) {
         if (survivor.health >= 100 || survivor.hunger >= 100) {
             survivor.health = 100; 
@@ -115,7 +115,7 @@ const eat = () => {
             survivor.hunger = 100;
             updateInfo(); 
             createDiv(`You have eaten cooked rabbit meat. Your hunger level is now at ${survivor.hunger}, your health at ${survivor.health}, and you gained some energy!`)
-        } else if (survivor.health >= 80 || survivor.hunger >= 80) {
+        } else if (survivor.health <= 80 || survivor.hunger >= 80) {
             survivor.health += 20;
             survivor.cookedMeat -= 1;
             survivor.energyLevel += 5; 
@@ -129,7 +129,7 @@ const eat = () => {
             survivor.hunger += 10;
             updateInfo(); 
             createDiv(`You have eaten cooked rabbit meat. Your hunger level is now at ${survivor.hunger}, your health at ${survivor.health}, and you gained some energy!`)
-        } else if (survivor.health > 0 || survivor.health === 70 && survivor.hunger > 0) {
+        } else if (survivor.health >= 0 || survivor.health === 70 && survivor.hunger >= 0) {
             survivor.health += 30;
             survivor.cookedMeat -= 1;
             survivor.energyLevel += 5; 
@@ -162,7 +162,7 @@ const updateInfo = () => {
 }
 // sleep
 const sleep = () => {
-    document.getElementById('game-text-container').innerHTML = '';
+    document.getElementById('game-text').innerHTML = '';
     if (survivor.woodCount <=0) {
         updateInfo();
         createDiv(`You don't have enough wood.`)
@@ -189,11 +189,11 @@ const reset = () => {
 const chopTree = () => {
     let foundRabbit = Math.floor(Math.random() * (3 - 1) + 1);
     if (foundRabbit > Math.floor(Math.random() * (3 - 1) + 1) && survivor.energyLevel > 0) {
-        document.getElementById('game-text-container').innerHTML = '';
+        document.getElementById('game-text').innerHTML = '';
         rabbit.found = true;
         createDiv(`You have found a rabbit! Attack it for some meat!`);
     } else {
-        document.getElementById('game-text-container').innerHTML = '';
+        document.getElementById('game-text').innerHTML = '';
         let chance = Math.floor(Math.random() * (5 - 1) + 1)
         if (survivor.energyLevel > 0) { // if energy level greater than 0
             survivor.energyLevel -= 1; 
@@ -215,17 +215,18 @@ const attack = () => { // attacks
     if (rabbit.found === true) {
         let chance = Math.floor(Math.random() * (3 - 1) + 1) // chance = random number 
         if (chance > Math.floor(Math.random() * (3 - 1) + 1)) { // if chance > random number
-            document.getElementById('game-text-container').innerHTML = '';
+            document.getElementById('game-text').innerHTML = '';
             survivor.rabbitMeat += 1; // add rabbitMeat to survivor object
             rabbit.found = false; // after killing rabbit, turns value false so player can't attack anymore
             updateInfo(); // update info
             createDiv(`You succesfully killed the rabbit and got some meat!`)
         } else {
+            document.getElementById('game-text').innerHTML = '';
             rabbit.found = false;
             createDiv(`You were unsuccesful and the rabbit got away.`)
         }
     } else if (rabbit.found === false) {
-        document.getElementById('game-text-container').innerHTML = '';
+        document.getElementById('game-text').innerHTML = '';
         createDiv(`There is nothing to attack!`)
     }
 }
