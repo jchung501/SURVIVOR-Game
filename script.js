@@ -14,7 +14,7 @@ const survivor = {
     woodCount: 0,
     energyLevel: 5,
     rabbitMeat: 0,
-    cookedMeat: 0,
+    cookedMeat: 5,
 }
 const rabbit = {
     health: 10,
@@ -94,7 +94,7 @@ const campFire = () => {
 const signalFire = () => {
     document.getElementById('game-text-container').innerHTML = ''
     survivor.hasZippo === true && survivor.woodCount >= 10 
-    ? (survivor.woodCount -= 10, updateInfo(), createDiv(`You have built a signal fire. A helicopter was able to see your signal. You are saved! You have survived and won!!!`)) 
+    ? (survivor.woodCount -= 10, updateInfo(), createDiv(`You have built a signal fire. A helicopter was able to see your signal. You are saved! You have survived and won!!!`), alert(`You've won!! Kato was able to be saved by a helicopter!`)) 
     : (createDiv(`You don't have enough wood!`))
 }
 // cook
@@ -108,28 +108,28 @@ const cook = () => {
 const eat = () => {
     document.getElementById('game-text-container').innerHTML = '';
     if (survivor.cookedMeat >= 1) {
-        if (survivor.health >= 100) {
+        if (survivor.health >= 100 || survivor.hunger >= 100) {
             survivor.health = 100; 
             survivor.cookedMeat -= 1;
             survivor.energyLevel += 5; 
-            survivor.hunger += 50;
+            survivor.hunger = 100;
             updateInfo(); 
             createDiv(`You have eaten cooked rabbit meat. Your hunger level is now at ${survivor.hunger}, your health at ${survivor.health}, and you gained some energy!`)
-        } else if (survivor.health >= 80) {
+        } else if (survivor.health >= 80 || survivor.hunger >= 80) {
             survivor.health += 20;
             survivor.cookedMeat -= 1;
             survivor.energyLevel += 5; 
-            survivor.hunger += 50;
+            survivor.hunger += 20;
             updateInfo(); 
             createDiv(`You have eaten cooked rabbit meat. Your hunger level is now at ${survivor.hunger}, your health at ${survivor.health}, and you gained some energy!`)
-        } else if (survivor.health >= 90) {
+        } else if (survivor.health >= 90 || survivor.hunger >= 90) {
             survivor.health += 10;
             survivor.cookedMeat -= 1;
             survivor.energyLevel += 5; 
-            survivor.hunger += 50;
+            survivor.hunger += 10;
             updateInfo(); 
             createDiv(`You have eaten cooked rabbit meat. Your hunger level is now at ${survivor.hunger}, your health at ${survivor.health}, and you gained some energy!`)
-        } else if (survivor.health > 0 || survivor.health === 70) {
+        } else if (survivor.health > 0 || survivor.health === 70 && survivor.hunger > 0) {
             survivor.health += 30;
             survivor.cookedMeat -= 1;
             survivor.energyLevel += 5; 
