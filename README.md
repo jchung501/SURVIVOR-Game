@@ -25,11 +25,17 @@ The player starts out with 60 health, hunger level of 30 and 5 energy.
 You are able to hover over each game icon to see what clicking it will do.
 
 Starting a campfire costs 1 wood. // Campfire icon
+<br>
 Starting a signal fire requires 10 wood. // SOS icon
+<br>
 Cooking costs 1 wood and requires raw meat. // Cooking icon
+<br>
 Sleeping costs 1 wood and increases your hunger by 10 but in return provides you with energy. // Sleeping bag icon
+<br>
 Eating decreases your hunger by 50, increases healthpoints by 30 and provides you with 5 energy. // Meat skewer icon
+<br>
 You can only attack if you come across a rabbit whilst chopping a tree. It's a random chance. Otherwise, the attack option is useless. // Crossed sword icon
+<br>
 Chopping trees for wood uses 1 energy and gives you a chance to be succesful. // Axe stump icon
 
 ### Sources Used

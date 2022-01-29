@@ -197,9 +197,10 @@ const sleep = () => {
         survivor.health >= 100 ? survivor.health = 100 : survivor.health += 20;
         survivor.energyLevel += 5;
         if (survivor.hunger <= 0) {
+            document.getElementById('game-text').innerHTML = '';
             survivor.health = 0;
             updateInfo();
-            alert(`You have died from hunger. Please reset the game.`)
+            return alert(`You have died from hunger. Please reset the game.`);
         } else {
         survivor.hunger -= 10;
         updateInfo();
