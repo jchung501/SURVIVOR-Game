@@ -1,37 +1,24 @@
-## Welcome to GitHub Pages
+<h1 align="center">Hi 👋, I'm John.</h1>
+<h3 align="center">A passionate Software Engineer in the making.</h3>
 
-You can use the [editor on GitHub](https://github.com/jchung501/SURVIVOR-Game/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+- 🔭 I’m currently working on **Survivor.**
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+- 🌱 I’m currently learning **with General Assembly!**
 
-### Markdown
+- 👨‍💻 All of my projects are available at [https://github.com/jchung501](https://github.com/jchung501)
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+- 💬 Ask me about **HTML, CSS & JavaScript**
 
-```markdown
-Syntax highlighted code block
+- 📫 How to reach me **JohnChung2011@gmail.com**
 
-# Header 1
-## Header 2
-### Header 3
+- 📄 Know about my experiences [https://linkedin.com/johnchungg](https://linkedin.com/johnchungg)
 
-- Bulleted
-- List
+- ⚡ Fun fact **I'm a sweatlord playing WoW TBC Classic.**
 
-1. Numbered
-2. List
+<h3 align="left">Connect with me:</h3>
+<p align="left">
+<a href="https://linkedin.com/in/johnchungg" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="johnchungg" height="30" width="40" /></a>
+</p>
 
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/jchung501/SURVIVOR-Game/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+<h3 align="left">Languages and Tools:</h3>
+<p align="left"> <a href="https://www.w3schools.com/css/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg" alt="css3" width="40" height="40"/> </a> <a href="https://git-scm.com/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg" alt="git" width="40" height="40"/> </a> <a href="https://www.w3.org/html/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg" alt="html5" width="40" height="40"/> </a> <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="javascript" width="40" height="40"/> </a> </p>
