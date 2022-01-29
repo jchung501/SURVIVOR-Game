@@ -32,4 +32,5 @@ Eating decreases your hunger by 50, increases healthpoints by 30 and provides yo
 You can only attack if you come across a rabbit whilst chopping a tree. It's a random chance. Otherwise, the attack option is useless. // Crossed sword icon
 Chopping trees for wood uses 1 energy and gives you a chance to be succesful. // Axe stump icon
 
+### Sources Used
 

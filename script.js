@@ -169,6 +169,9 @@ const updateInfo = () => {
     if (survivor.hunger >= 100) {
         survivor.hunger = 100;
     }
+    if (survivor.hunger <= 0) {
+        survivor.health = 0;
+    }
     document.getElementById('health-points').innerText = `${survivor.health}`;
     document.getElementById('hunger-level').innerText = `${survivor.hunger}`;
     document.getElementById('wood-count').innerText = `${survivor.woodCount}`;
@@ -177,9 +180,11 @@ const updateInfo = () => {
     document.getElementById('raw-meat').innerText = `${survivor.rabbitMeat}`;
     document.getElementById('cooked-meat').innerText = `${survivor.cookedMeat}`
     if (survivor.hunger <= 0) {
+        survivor.health = 0;
         return alert(`You have died from hunger. Please reset the game.`);
     }
 }
+
 // sleep
 const sleep = () => {
     document.getElementById('game-text').innerHTML = '';
@@ -192,6 +197,7 @@ const sleep = () => {
         survivor.health >= 100 ? survivor.health = 100 : survivor.health += 20;
         survivor.energyLevel += 5;
         if (survivor.hunger <= 0) {
+            survivor.health = 0;
             updateInfo();
             alert(`You have died from hunger. Please reset the game.`)
         } else {
@@ -264,3 +270,7 @@ document.getElementById('sleep').addEventListener('click', buttonClick)
 document.getElementById('reset').addEventListener('click', buttonClick)
 document.getElementById('chop-tree').addEventListener('click', buttonClick)
 document.getElementById('attack').addEventListener('click', buttonClick)
+
+////////////////////////////////////////
+//////////////// MODAL /////////////////
+////////////////////////////////////////
