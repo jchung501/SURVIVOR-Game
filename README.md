@@ -30,7 +30,7 @@ Starting a signal fire requires 10 wood. <img src='./game_icons/getsaved.png' wi
 <br>
 Cooking costs 1 wood and requires raw meat. <img src='./game_icons/cook.png' width='25px' height='25px'>
 <br>
-Sleeping costs 1 wood and increases your hunger by 10 but provides you with energy. <img src='./game_icons/sleep.png' width='25px' height='25px'>
+Sleeping costs 1 wood and increases your hunger by 10 but provides you with energy. <img src='./game_icons/sleep.PNG' width='25px' height='25px'>
 <br>
 Eating decreases your hunger by 50, increases healthpoints by 30 and provides you with 5 energy. <img src='/game_icons/eat.png' width='25px' height='25px'>
 <br>
