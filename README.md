@@ -24,7 +24,7 @@ The player starts out with 60 health, hunger level of 30 and 5 energy.
 
 You are able to hover over each game icon to see what clicking it will do.
 
-Starting a campfire costs 1 wood. // Campfire icon
+Starting a campfire costs 1 wood. // <img src='./game_icons/campfire.png'>
 <br>
 Starting a signal fire requires 10 wood. // SOS icon
 <br>
