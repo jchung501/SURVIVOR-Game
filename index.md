@@ -11,7 +11,7 @@
 
 - 📫 How to reach me **JohnChung2011@gmail.com**
 
-- 📄 Know about my experiences [https://linkedin.com/johnchungg](https://linkedin.com/johnchungg)
+- 📄 Know about my experiences [https://linkedin.com/in/johnchungg](https://linkedin.com/in/johnchungg)
 
 - ⚡ Fun fact **I'm a sweatlord playing WoW TBC Classic.**
 
