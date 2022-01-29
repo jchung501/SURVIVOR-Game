@@ -230,5 +230,20 @@ document.getElementById('chop-tree').addEventListener('click', buttonClick)
 document.getElementById('attack').addEventListener('click', buttonClick)
 
 ////////////////////////////////////////
-//////////////// MODAL /////////////////
+//////// RESTART CSS ANIMATION /////////
 ////////////////////////////////////////
+
+// retrieve the element
+element = document.querySelectorAll('.game-button');
+// reset the transition by...
+element[1].addEventListener("click", function(e) {
+  e.currentTarget.preventDefault;
+  // -> removing the class
+  element[1].classList.remove("change");
+  // -> triggering reflow
+  void element[1].offsetWidth;
+  // -> and re-adding the class
+  element[1].classList.add("change");
+}, false);
+
+// Thanks to this guide here https://css-tricks.com/restart-css-animation/ 
