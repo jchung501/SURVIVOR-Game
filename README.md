@@ -26,17 +26,17 @@ You are able to hover over each game icon to see what clicking it will do.
 
 Starting a campfire costs 1 wood. <img src='./game_icons/campfire.png' width='25px' height='25px'>
 <br>
-Starting a signal fire requires 10 wood. // SOS icon
+Starting a signal fire requires 10 wood. <img src='./game_icons/getsaved.png' width='25px' height='25px'>
 <br>
-Cooking costs 1 wood and requires raw meat. // Cooking icon
+Cooking costs 1 wood and requires raw meat. <img src='./game_icons/cook.png' width='25px' height='25px'>
 <br>
-Sleeping costs 1 wood and increases your hunger by 10 but in return provides you with energy. // Sleeping bag icon
+Sleeping costs 1 wood and increases your hunger by 10 but provides you with energy. <img src='./game_icons/sleep.png' width='25px' height='25px'>
 <br>
-Eating decreases your hunger by 50, increases healthpoints by 30 and provides you with 5 energy. // Meat skewer icon
+Eating decreases your hunger by 50, increases healthpoints by 30 and provides you with 5 energy. <img src='/game_icons/eat.png' width='25px' height='25px'>
 <br>
-You can only attack if you come across a rabbit whilst chopping a tree. It's a random chance. Otherwise, the attack option is useless. // Crossed sword icon
+You can only attack if you come across a rabbit whilst chopping a tree. It's a random chance. Otherwise, the attack option is useless. <img src='./game_icons/attack.PNG' width='25px' height='25px'>
 <br>
-Chopping trees for wood uses 1 energy and gives you a chance to be succesful. // Axe stump icon
+Chopping trees for wood uses 1 energy and gives you a chance to be succesful. <img src='./game_icons/choptree.png' width='25px' height='25px'>
 
 ### Sources Used
 
