@@ -22,6 +22,8 @@ I had a hard time trying to connect the functions with each other to make sure t
 
 The player starts out with 60 health, hunger level of 30 and 5 energy. 
 
+You are able to hover over each game icon to see what clicking it will do.
+
 Starting a campfire costs 1 wood. // Campfire icon
 Starting a signal fire requires 10 wood. // SOS icon
 Cooking costs 1 wood and requires raw meat. // Cooking icon
