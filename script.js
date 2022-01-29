@@ -14,7 +14,7 @@ const survivor = {
     woodCount: 0,
     energyLevel: 5,
     rabbitMeat: 0,
-    cookedMeat: 5,
+    cookedMeat: 0,
 }
 const rabbit = {
     health: 10,
