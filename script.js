@@ -33,18 +33,18 @@ const gameLoaded = () => {
     days += 1;
     updateInfo();
     createDiv(`
-    <i>**ENGINE FAILURE**</i>
-    <br><br>
+    **ENGINE FAILURE**
+    
     The pilot comes over the intercom, "Our turbines are suffering a failure and we will do our best to land this as safely as possible. Please brace yourselves for impact and may God help us all.
-    <br><br>
+    
     The last thing Kato sees before he tucks his head down is that the plane is headed towards a deserted island. He tucks his head, closes his eyes and prays. 
-    <br><br>
+    
     The plane impacts the deserted island. Everything is black.
-    <br><br> 
+    
     Kato wakes up disoriented and looks around horrified... he is the only survivor.
-    <br><br>
-    <bold>Will he be able to survive?</bold> His life is in <strong>YOUR</strong> hands.
-    <br><br>
+    
+    Will he be able to survive? His life is in YOUR hands.
+    
     Please select an option below.`)
 }
 
@@ -75,7 +75,7 @@ const createDiv = (gameText) => {
     let newDiv = document.createElement('div')
     // newDiv.classList.add('game-text')
     let newP = document.createElement('p')
-    newP.innerHTML = `${gameText}`
+    newP.innerText = `${gameText}`
     newDiv.append(newP)
     gameTextDOM.append(newDiv)
 }
@@ -105,49 +105,6 @@ const cook = () => {
     : createDiv(`You don't have enough wood or rabbit meat to cook!`)
 }
 // eat
-/* const eat = () => {
-    document.getElementById('game-text').innerHTML = '';
-    if (survivor.cookedMeat >= 1) { // if survivor has cooked meat
-        if (survivor.health >= 100 || survivor.hunger >= 100) { //if health is greater than or equal to 100 OR hunger is greater than or equal to 100
-            survivor.health = 100; // remain 100
-            survivor.cookedMeat -= 1; // use meat
-            survivor.energyLevel += 5; // gain 5 energy
-            survivor.hunger = 100; // remain 100
-            updateInfo(); 
-            createDiv(`You have eaten cooked rabbit meat. Your hunger level is now at ${survivor.hunger}, your health at ${survivor.health}, and you gained some energy!`)
-        } else if (survivor.health >=90) { //but if health > 80 but less than 90
-            survivor.health += 10;
-            survivor.cookedMeat -= 1;
-            survivor.energyLevel += 5; 
-            survivor.hunger += 20;
-            updateInfo(); 
-            createDiv(`You have eaten cooked rabbit meat. Your hunger level is now at ${survivor.hunger}, your health at ${survivor.health}, and you gained some energy!`)
-        } else if (survivor.hunger >= 90 && survivor.hunger >= 80) {
-            survivor.health += 10;
-            survivor.cookedMeat -= 1;
-            survivor.energyLevel += 5; 
-            survivor.hunger += 10;
-            updateInfo(); 
-            createDiv(`You have eaten cooked rabbit meat. Your hunger level is now at ${survivor.hunger}, your health at ${survivor.health}, and you gained some energy!`)
-        } else if (survivor.health >= 0 && survivor.hunger >= 0) {
-            survivor.health += 30;
-            survivor.cookedMeat -= 1;
-            survivor.energyLevel += 5; 
-            survivor.hunger += 50;
-            updateInfo(); 
-            createDiv(`You have eaten cooked rabbit meat. Your hunger level is now at ${survivor.hunger}, your health at ${survivor.health}, and you gained some energy!`)
-        }
-        // survivor.health += 30;
-        // survivor.cookedMeat -= 1;
-        // survivor.energyLevel += 5; 
-        // survivor.hunger += 50;
-        // updateInfo(); 
-        // createDiv(`You have eaten cooked rabbit meat. Your hunger level is now at ${survivor.hunger}, your health at ${survivor.health}, and you gained some energy!`)
-    } else {
-        createDiv(`You do not have any cooked rabbit meat to eat!`)
-    } 
-} */
-
 const eat = () => {
     document.getElementById('game-text').innerHTML = '';
     if (survivor.cookedMeat >= 1) {

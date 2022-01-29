@@ -42,14 +42,22 @@ h1 {
 }
 .game-button:hover {
     box-shadow: inset 400px 0 0 0 red;
-    color: black;
+    color: white;
 }
 #game-text-container {
     display: flex;
     /* border: 2px solid white; */
-    border-top-width: 15px;
+    /* border-top-width: 15px; */
+    height: 100%;
     width: 100%;
     justify-content: center;
+    padding: 1%;
+}
+#game-text {
+    /* border: 2px solid white; */
+    display: inline-block;
+    width: 800px;
+    height: 500px;
 }
 p {
     font-size: 22px;
@@ -64,6 +72,9 @@ p {
 #icon-container {
     display: flex;
     justify-content: center;
+    padding: 5%;
+    /* width: 100vw; */
+    height: 10vh;
 }
 #campfire:hover {
     opacity: 1;
@@ -161,73 +172,7 @@ p {
 /***************************************************************/
 
 
-
 /***************************************************************/
-/*************** FOR DIFFERENT VIEWING PLATFORMS ***************/
+/************************** KEYFRAMES **************************/
 /***************************************************************/
 
-/* 
-  ##Device = Desktops
-  ##Screen = 1281px to higher resolution desktops
-*/
-
-@media (min-width: 1281px) {
-  
-    /* CSS */
-    
-  }
-  
-  /* 
-    ##Device = Laptops, Desktops
-    ##Screen = B/w 1025px to 1280px
-  */
-  
-  @media (min-width: 1025px) and (max-width: 1280px) {
-    
-    /* CSS */
-    
-  }
-  
-  /* 
-    ##Device = Tablets, Ipads (portrait)
-    ##Screen = B/w 768px to 1024px
-  */
-  
-  @media (min-width: 768px) and (max-width: 1024px) {
-    
-    /* CSS */
-    
-  }
-  
-  /* 
-    ##Device = Tablets, Ipads (landscape)
-    ##Screen = B/w 768px to 1024px
-  */
-  
-  @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
-    
-    /* CSS */
-    
-  }
-  
-  /* 
-    ##Device = Low Resolution Tablets, Mobiles (Landscape)
-    ##Screen = B/w 481px to 767px
-  */
-  
-  @media (min-width: 481px) and (max-width: 767px) {
-    
-    /* CSS */
-    
-  }
-  
-  /* 
-    ##Device = Most of the Smartphones Mobiles (Portrait)
-    ##Screen = B/w 320px to 479px
-  */
-  
-  @media (min-width: 320px) and (max-width: 480px) {
-    
-    /* CSS */
-    
-  }
