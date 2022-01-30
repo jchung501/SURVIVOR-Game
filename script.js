@@ -101,7 +101,7 @@ const signalFire = () => {
 const cook = () => {
     document.getElementById('game-text').innerHTML = '';
     survivor.hasZippo === true && survivor.woodCount >= 1 && survivor.rabbitMeat >= 1 
-    ? (survivor.woodCount -= 1, survivor.rabbitMeat -= 1, survivor.cookedMeat += 1, updateInfo(), createDiv(`You have cooked some rabbit meat. It has been added to your inventory. Each cooked rabbit meat adds 50 to your hunger level and 30 healthpoints.`)) 
+    ? (survivor.woodCount -= 1, survivor.rabbitMeat -= 1, survivor.cookedMeat += 1, trigCkMeatAni(), updateInfo(), createDiv(`You have cooked some rabbit meat. It has been added to your inventory. Each cooked rabbit meat adds 50 to your hunger level and 30 healthpoints.`)) 
     : createDiv(`You don't have enough wood or rabbit meat to cook!`)
 }
 // eat
@@ -112,6 +112,9 @@ const eat = () => {
         survivor.cookedMeat -= 1;
         survivor.hunger += 50;
         survivor.energyLevel += 5;
+        trigEnergyAni();
+        trigHungerAni();
+        trigHealthAni();
         updateInfo();
         createDiv(`You have eaten cooked rabbit meat. Your hunger level is now at ${survivor.hunger}, your health at ${survivor.health}, and you gained some energy!`)
     } else {
@@ -184,6 +187,7 @@ const chopTree = () => {
             updateInfo();
         if (chance > Math.floor(Math.random() * 4 - 1) + 1) {
             survivor.woodCount += 1;
+            trigWoodAni();
             updateInfo();
             createDiv(`You were succesful in chopping the tree!`)
         } else {
@@ -203,6 +207,7 @@ const attack = () => { // attacks
             survivor.rabbitMeat += 1; // add rabbitMeat to survivor object
             rabbit.found = false; // after killing rabbit, turns value false so player can't attack anymore
             updateInfo(); // update info
+            trigRwMeatAni();
             createDiv(`You succesfully killed the rabbit and got some meat!`)
         } else {
             document.getElementById('game-text').innerHTML = '';
@@ -233,17 +238,54 @@ document.getElementById('attack').addEventListener('click', buttonClick)
 //////// RESTART CSS ANIMATION /////////
 ////////////////////////////////////////
 
-// retrieve the element
-element = document.querySelectorAll('.game-button');
-// reset the transition by...
-element[1].addEventListener("click", function(e) {
-  e.currentTarget.preventDefault;
-  // -> removing the class
-  element[1].classList.remove("change");
-  // -> triggering reflow
-  void element[1].offsetWidth;
-  // -> and re-adding the class
-  element[1].classList.add("change");
-}, false);
+const trigHealthAni = () => {
+    let healthEl = document.getElementById('health')
+    healthEl.preventDefault;
+    healthEl.classList.remove('change');
+    void healthEl.offsetWidth;
+    healthEl.classList.add('change');
+}
+const trigHungerAni = () => {
+    let hungerEl = document.getElementById('hunger');
+    hungerEl.preventDefault;
+    hungerEl.classList.remove('change')
+    void hungerEl.offsetWidth;
+    hungerEl.classList.add('change')
+}
+const trigEnergyAni = () => {
+    let energyEl = document.getElementById('energy');
+    energyEl.preventDefault;
+    energyEl.classList.remove('change')
+    void energyEl.offsetWidth;
+    energyEl.classList.add('change')
+}
+const trigCkMeatAni = () => {
+    let cookedEl = document.getElementById('cooked');
+    cookedEl.preventDefault;
+    cookedEl.classList.remove('change')
+    void cookedEl.offsetWidth;
+    cookedEl.classList.add('change')
+}
+const trigWoodAni = () => {
+    let woodEl = document.getElementById('wood');
+    woodEl.preventDefault;
+    woodEl.classList.remove('change')
+    void woodEl.offsetWidth;
+    woodEl.classList.add('change')
+}
+const trigRwMeatAni = () => {
+    let rawEl = document.getElementById('raw');
+    rawEl.preventDefault;
+    rawEl.classList.remove('change')
+    void rawEl.offsetWidth;
+    rawEl.classList.add('change')
+}
+const trigDayAni = () => {
+    let daysEl = document.getElementById('days');
+    daysEl.preventDefault;
+    daysEl.classList.remove('change')
+    void daysEl.offsetWidth;
+    daysEl.classList.add('change')
+}
 
 // Thanks to this guide here https://css-tricks.com/restart-css-animation/ 
