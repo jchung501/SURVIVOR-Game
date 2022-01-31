@@ -8,7 +8,7 @@ alert(`Welcome to Survivor. This is a story game. You have just survived a plane
 const survivor = {
     name: 'Kato',
     health: 60,
-    hunger: 30,
+    hunger: 50,
     hasHatchet: true,
     hasZippo: true,
     woodCount: 0,
@@ -139,6 +139,9 @@ const updateInfo = () => {
     document.getElementById('energy-level').innerText = `${survivor.energyLevel}`;
     document.getElementById('raw-meat').innerText = `${survivor.rabbitMeat}`;
     document.getElementById('cooked-meat').innerText = `${survivor.cookedMeat}`
+    if (days >= 5) {
+        return alert(`You have missed your chance to be saved. All hope is lost. Please restart the game.`)
+    }
     if (survivor.hunger <= 0) {
         survivor.health = 0;
         return alert(`You have died from hunger. Please reset the game.`);

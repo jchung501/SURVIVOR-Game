@@ -8,7 +8,7 @@ This is a text-based story game following the adventure of the only survivor of 
 
 ## Gameplay Objective
 
-The player must be able to survive and gather enough wood to create a signal fire. You are started off with 60 health, 30 hunger, a zippo lighter, a hatchet and your energy levels are quite scarce. Player must gather 10 pieces of wood without their hunger or health dropping to 0. Majority of actions require the use of wood so think carefully about which actions you choose to do.
+The player must be able to survive and gather enough wood to create a signal fire. You are started off with 60 health, 30 hunger, a zippo lighter, a hatchet and your energy levels are quite scarce. Player must gather 10 pieces of wood without their hunger or health dropping to 0. Majority of actions require the use of wood so think carefully about which actions you choose to do. If you're unable to gather enough wood to create a signal fire by the 5th day, you will die. 
 
 ## Technologies Used
 
@@ -22,7 +22,7 @@ I had a hard time trying to connect the functions with each other to make sure t
 
 ## How To Play
 
-The player starts out with 60 health, hunger level of 30 and 5 energy. 
+The player starts out with 60 health, hunger level of 50 and 5 energy. If you're unable to get saved by the 5th day, all hope is lost.
 
 You are able to hover over each game icon to see what clicking it will do.
 
