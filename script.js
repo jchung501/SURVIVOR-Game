@@ -15,19 +15,21 @@ const survivor = {
     energyLevel: 5,
     rabbitMeat: 0,
     cookedMeat: 0,
+    // escapeChance: Math.floor(Math.random() * (6 - 3) + 3 )
 }
 const rabbit = {
     health: 10,
     elusiveness: 5,
     found: false,
 }
+const bear = {
+    // catchChance: Math.floor(Math.random() * (5 - 1) + 1)
+}
 let days = 0;
 
 //////////////////////////////////////////
 ///////// ALL FUNCTIONS //////////////////
 //////////////////////////////////////////
-
-// Button Click Function
 
 const gameLoaded = () => {
     days += 1;
@@ -47,7 +49,7 @@ const gameLoaded = () => {
     
     Please select an option below.`)
 }
-
+// Button Click Function
 const buttonClick = (evt) => {
     if (evt.currentTarget.id === 'campfire') {
         campFire();
@@ -210,7 +212,7 @@ const attack = () => { // attacks
             survivor.rabbitMeat += 1; // add rabbitMeat to survivor object
             rabbit.found = false; // after killing rabbit, turns value false so player can't attack anymore
             updateInfo(); // update info
-            trigRwMeatAni();
+            trigRwMeatAni(); // run animation
             createDiv(`You succesfully killed the rabbit and got some meat!`)
         } else {
             document.getElementById('game-text').innerHTML = '';
@@ -242,50 +244,50 @@ document.getElementById('attack').addEventListener('click', buttonClick)
 ////////////////////////////////////////
 
 const trigHealthAni = () => {
-    let healthEl = document.getElementById('health')
-    healthEl.preventDefault;
-    healthEl.classList.remove('change');
-    void healthEl.offsetWidth;
-    healthEl.classList.add('change');
+    let healthEl = document.getElementById('health') // grabbing this element from DOM
+    // healthEl.preventDefault;
+    healthEl.classList.remove('change'); // when function ran, it removes class 'change'
+    void healthEl.offsetWidth; // retriggers a reflow, causing function to run from start
+    healthEl.classList.add('change'); // add change class to element
 }
 const trigHungerAni = () => {
     let hungerEl = document.getElementById('hunger');
-    hungerEl.preventDefault;
+    // hungerEl.preventDefault;
     hungerEl.classList.remove('change')
     void hungerEl.offsetWidth;
     hungerEl.classList.add('change')
 }
 const trigEnergyAni = () => {
     let energyEl = document.getElementById('energy');
-    energyEl.preventDefault;
+    // energyEl.preventDefault;
     energyEl.classList.remove('change')
     void energyEl.offsetWidth;
     energyEl.classList.add('change')
 }
 const trigCkMeatAni = () => {
     let cookedEl = document.getElementById('cooked');
-    cookedEl.preventDefault;
+    // cookedEl.preventDefault;
     cookedEl.classList.remove('change')
     void cookedEl.offsetWidth;
     cookedEl.classList.add('change')
 }
 const trigWoodAni = () => {
     let woodEl = document.getElementById('wood');
-    woodEl.preventDefault;
+    // woodEl.preventDefault;
     woodEl.classList.remove('change')
     void woodEl.offsetWidth;
     woodEl.classList.add('change')
 }
 const trigRwMeatAni = () => {
     let rawEl = document.getElementById('raw');
-    rawEl.preventDefault;
+    // rawEl.preventDefault;
     rawEl.classList.remove('change')
     void rawEl.offsetWidth;
     rawEl.classList.add('change')
 }
 const trigDayAni = () => {
     let daysEl = document.getElementById('days');
-    daysEl.preventDefault;
+    // daysEl.preventDefault;
     daysEl.classList.remove('change')
     void daysEl.offsetWidth;
     daysEl.classList.add('change')
