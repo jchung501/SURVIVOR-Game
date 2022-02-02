@@ -12,9 +12,9 @@ The player must be able to survive and gather enough wood to create a signal fir
 
 ## Technologies Used
 
-JavaScript used to write the functionality. 
-HTML to create divs to hold the upper and lower game buttons as well as the game text container.
-CSS to style.
+<li>JavaScript used to write the functionality.</li>
+<li>HTML to create divs to hold the upper and lower game buttons as well as the game text container.</li>
+<li>CSS to style.</li>
 
 ## Challenges 
 
